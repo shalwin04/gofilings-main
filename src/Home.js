@@ -25,73 +25,75 @@ const Home = () => {
     setShowForm(false);
   };
 return (
-    <div>
-    <header className="flex items-center justify-center bg-gray-800 text-white p-4">
+    <div className="min-h-screen flex flex-col justify-between">
+    <header className="flex items-center justify-center bg-gray-800 text-white p-2 sm:p-4 w-full">
       <div className="flex items-center justify-between w-full max-w-screen-lg mx-auto">
         <div className="flex items-center">
           <img
             src={logo1}
             alt="Logo"
-            className="w-16 h-16 mr-3" // Adjust the width and height here
-          />
+            className="w-16 h-16 mr-3 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" // Adjust the width and height here
+         />
         </div>
         <div>
-          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full sm:py-3 sm:px-6 md:py-3 md:px-6 lg:py-4 lg:px-8"
           onClick={handleButtonClick}>
             Contact Us
           </button>
         </div>
       </div>
     </header>
-    <main>
-      <div className="flex items-center justify-center mt-8">
-        <div className="flex items-center w-full max-w-screen-lg mx-auto">
-          <div className="flex items-center justify-between w-full">
-            <div>
-              <h1 className="text-3xl font-bold text-green-500 text-center">
-                Are you working somewhere?
-              </h1>
-              <div className="mt-6">
-                <p className="text-4xl font-bold text-blue-500 text-center">
-                  Have you filled your Income Tax Returns?
-                </p>
+    <main className="flex-grow mt-8">
+    <div className="flex items-center justify-center mt-8">
+          <div className="flex items-center w-full max-w-screen-lg mx-auto">
+            <div className="flex flex-col md:flex-row items-center justify-between w-full">
+              <div className="md:w-1/2">
+                <h1 className="text-3xl font-bold text-green-500 text-center">
+                  Are you working somewhere?
+                </h1>
+                <div className="mt-6">
+                  <p className="text-4xl font-bold text-blue-500 text-center">
+                    Have you filled your Income Tax Returns?
+                  </p>
+                </div>
+                <div className="flex items-center justify-center mt-4">
+                  <button
+                    className="mt-6 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+                    onClick={handleButtonClick}
+                  >
+                    Click here
+                  </button>
+                </div>
               </div>
-              <div className="flex items-center justify-center mt-4">
-              <button
-                className="mt-6 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
-                onClick={handleButtonClick}
-              >
-                Click here
-              </button>
-              </div>
+              <img
+                src={AnalyticsAmico}
+                alt="Logo"
+                className="w-full md:w-1/2 ml-8"
+                style={{ maxWidth: '400px' }}
+              />
             </div>
-            <img
-              src={AnalyticsAmico}
-              alt="Logo"
-              className="w-full md:w-1/2 ml-8"
-            />
           </div>
         </div>
+<div className="flex items-center justify-center mt-16">
+  <div className="flex items-center w-full max-w-screen-lg mx-auto">
+    <div className="flex items-center justify-between w-full">
+      <div>
+        <h1 className="text-3xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl text-blue-800 text-center">
+          GoFilings is a Cloud based Accounting platform through which
+          we offer all accounting services like Filing Income Tax
+          Returns, GST Returns etc., at users convenience.
+        </h1>
+        <div className="mt-6">
+          <p className="text-6xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-center font-bold text-blue-500 ">
+            Why <span className="text-green-500">Go</span>Filings?
+          </p>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+
       <div className="flex items-center justify-center mt-16">
-        <div className="flex items-center w-full max-w-screen-lg mx-auto">
-          <div className="flex items-center justify-between w-full">
-            <div>
-              <h1 className="text-3xl text-blue-800 text-center">
-                GoFilings is a Cloud based Accounting platform through which
-                we offer all accounting services like Filing Income Tax
-                Returns, GST Returns etc., at users convenience.
-              </h1>
-              <div className="mt-6">
-                <p className="text-6xl text-center font-bold text-blue-500 ">
-                  Why <span className="text-green-500">Go</span>Filings?
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="flex items-center justify-center mt-6">
         <div className="flex flex-wrap justify-center w-full max-w-screen-lg mx-auto">
           <div className="flex flex-col items-center justify-center w-1/2 md:w-1/4">
             <img src={YoungandHappy} alt="Image 1" className="w-1/2" />
@@ -132,101 +134,100 @@ return (
         </div>
       </div>
       <div className="flex items-center justify-center mt-6">
-        <div className="flex items-center w-full max-w-screen-lg mx-auto">
-          <div className="flex items-center justify-between w-full">
-            <img
-              src={Filesearch}
-              alt="Logo"
-              className="w-full md:w-1/2 ml-8"
-            />
-            <div className="flex items-center justify-center w-full max-w-screen-lg mx-auto">
-              <div>
-                <h1 className="text-3xl text-blue-500 font-bold text-center">
-                  Are you working somewhere?
-                </h1>
-                <div className="mt-4">
-                  <p className="text-center">
-                    Have no time to file your Income tax returns.
-                  </p>
-                  <p className="text-xl text-blue-500 text-center">
-                    Get your returns filed in a few simple steps.
-                  </p>
-                </div>
-                <div className="flex items-center justify-center mt-4">
-                  <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
-                  onClick={handleButtonClick}>
-                    Start filing
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div className="flex flex-col items-center w-full max-w-screen-lg mx-auto md:flex-row">
+    <img
+      src={Filesearch}
+      alt="Logo"
+      className="w-full md:w-1/2 mb-4 md:mb-0"
+      style={{ maxWidth: '400px' }}
+    />
+    <div >
+      <h1 className="text-4xl font-bold text-blue-500 text-center">
+        Are you working somewhere?
+      </h1>
+      <div className="mt-4">
+        <p className="text-center text-2xl">
+          Have no time to file your Income tax returns.
+        </p>
+        <p className="text-2xl text-blue-500 text-center">
+          Get your returns filed in a few simple steps.
+        </p>
+      </div>
+      <div className="flex items-center justify-center mt-4 md:mt-6">
+        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 md:py-3 md:px-6 rounded-full" onClick={handleButtonClick}>
+          Start filing
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+ <div className="flex items-center justify-center mt-8">
+  <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-screen-lg mx-auto">
+    <div className="flex items-center justify-center w-full max-w-screen-lg mx-auto md:w-1/2 md:mr-8">
+      <div>
+        <h1 className="text-4xl font-bold text-blue-500 text-center">
+          Are you a Business Owner?
+        </h1>
+        <div className="mt-4">
+          <p className="text-center text-2xl">
+            Have no time to file your Income tax returns.
+          </p>
+          <p className="text-2xl text-blue-500 text-center">
+            Get your returns filed in a few simple steps.
+          </p>
+        </div>
+        <div className="flex items-center justify-center mt-4">
+          <button
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+            onClick={handleButtonClick}
+          >
+            Start filing
+          </button>
         </div>
       </div>
-      <div className="flex items-center justify-center mt-6">
-        <div className="flex items-center w-full max-w-screen-lg mx-auto">
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center justify-center w-full max-w-screen-lg mx-auto">
-              <div>
-                <h1 className="text-3xl  font-bold text-blue-500 text-center">
-                  Are you a Business Owner?
-                </h1>
-                <div className="mt-4">
-                  <p className="text-center">
-                    Have no time to file your Income tax returns.
-                  </p>
-                  <p className="text-xl text-blue-500 text-center">
-                    Get your returns filed in a few simple steps.
-                  </p>
-                </div>
-                <div className="flex items-center justify-center mt-4">
-                  <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" 
-                  onClick={handleButtonClick}>
-                    Start filing
-                  </button>
-                </div>
-              </div>
-            </div>
-            <img
-              src={Financepana}
-              alt="Logo"
-              className="w-full md:w-1/2 ml-8"
-            />
-          </div>
+    </div>
+    <img
+      src={Financepana}
+      alt="Logo"
+      className="w-full md:w-1/2 mt-4 md:mt-0"
+      style={{ maxWidth: '400px' }}
+    />
+  </div>
+</div>
+<div className="flex items-center justify-center mt-6">
+  <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-screen-lg mx-auto">
+    <img
+      src={Invoice}
+      alt="Logo"
+      className="w-full md:w-1/2 mb-4 md:mb-0"
+      style={{ maxWidth: '400px' }}
+    />
+    <div className="flex items-center justify-center w-full max-w-screen-lg mx-auto md:w-1/2 md:ml-8">
+      <div>
+        <h1 className="text-4xl text-blue-500 font-bold text-center">
+          Looking for any other Accounting Services?
+        </h1>
+        <div className="mt-4">
+          <p className="text-center text-2xl">
+            Like filing your GST returns, Auditing etc.
+          </p>
+          <p className="text-2xl text-blue-500 text-center">
+            Reach Out to Us.
+          </p>
+        </div>
+        <div className="flex items-center justify-center mt-4">
+          <button
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+            onClick={handleButtonClick}
+          >
+            Start filing
+          </button>
         </div>
       </div>
-      <div className="flex items-center justify-center mt-6">
-        <div className="flex items-center w-full max-w-screen-lg mx-auto">
-          <div className="flex items-center justify-between w-full">
-            <img
-              src={Invoice}
-              alt="Logo"
-              className="w-full md:w-1/2 ml-8"
-            />
-            <div className="flex items-center justify-center w-full max-w-screen-lg mx-auto">
-              <div>
-                <h1 className="text-3xl text-blue-500 font-bold text-center">
-                  Looking for any other Accounting Services?
-                </h1>
-                <div className="mt-4">
-                  <p className="text-center">
-                    Like filing your GST returns, Auditing etc.
-                  </p>
-                  <p className="text-xl text-blue-500 text-center">
-                    Reach Out to Us.
-                  </p>
-                </div>
-                <div className="flex items-center justify-center mt-4">
-                  <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" 
-                  onClick={handleButtonClick}>
-                    Start filing
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+  </div>
+</div>
+
       <Routes>
         <Route path="/form" element={<Form />} />
         {/* Other routes */}

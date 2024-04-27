@@ -13,6 +13,8 @@ const Form = ({ onClose }) => {
   const [showThanks, setShowThanks] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
 
+  const formRef = useRef();
+
   const validateForm = () => {
     // Check if all required fields are filled
     const isNameValid = name.trim() !== "";
@@ -67,21 +69,33 @@ const Form = ({ onClose }) => {
       setTimeout(() => setShowThanks(false), 5000); // 5 seconds
     }
   }, [submitted]);
-
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (formRef.current && !formRef.current.contains(event.target)) {
+        onClose(); // Close the form if click is outside the form container
+      }
+    };
+  
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClose]);
+  
   return (
     <div className="relative flex flex-col items-center justify-center h-full">
       <img src={logo1} alt="Logo" className="w-16 h-16 mb-8" />
-      <button className="absolute top-0 right-0 m-4 z-50" onClick={handleClose} style={{ zIndex: 9999 }}>
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
       {!submitted && (
         <form
           onSubmit={sendEmail}
-          ref={form}
-          className="mt-8 max-w-md mx-auto p-6 border border-gray-300 rounded-lg"
+          ref={formRef}
+          className="mt-8 max-w-md mx-auto p-6 border border-gray-300 rounded-lg relative"
         >
+            <button className="absolute top-0 right-0 m-4 z-50" onClick={handleClose}>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
           <div className="mb-4">
             <label htmlFor="firstName" className="block text-gray-700 font-bold mb-2">Name*</label>
             <input
@@ -165,6 +179,8 @@ const Form = ({ onClose }) => {
             disabled={!isFormValid}
           >
             Submit
+
+
           </button>
         </form>
       )}
